@@ -18,7 +18,7 @@ namespace StepByStepLiskovTestByBuilders
 
         protected TEntity sut;
 
-        protected abstract TEntity getInstance();
+        protected virtual TEntity getInstance() { return null; }
 
 
         protected virtual void AssertInvariants()

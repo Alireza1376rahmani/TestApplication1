@@ -13,15 +13,10 @@ namespace StepByStepLiskovTestByBuilders
 
         public TestEntityTest()
         {
-            sut = getInstance();
+            var builder = new TestEntityBuilder();
+            sut = builder.WithId(SOME_ID).Build();
         } 
 
-        protected override TestEntity getInstance()
-        {
-            return new TestEntity(SOME_ID);
-        }
-
-        
 
     }
 }
