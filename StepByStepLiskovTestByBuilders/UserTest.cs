@@ -11,6 +11,8 @@ namespace StepByStepLiskovTestByBuilders
     public class UserTest: EntityTest<User>
     {
 
+        private const string SOME_NAME = "some name";
+
         public UserTest()
         {
             sut = getInstance();
@@ -55,7 +57,7 @@ namespace StepByStepLiskovTestByBuilders
 
         protected override User getInstance()
         {
-            return new User(SOME_ID, "ss");
+            return new User(SOME_ID, SOME_NAME);
         }
     }
 }
