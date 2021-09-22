@@ -10,7 +10,7 @@ using ConsoleApplication;
 
 namespace StepByStepLiskovTestByBuilders
 {
-    public abstract class EntityTest<TEntity>
+    public abstract class EntityTest<TEntity> : IDisposable
         where TEntity : Entity
     {
 
@@ -80,6 +80,11 @@ namespace StepByStepLiskovTestByBuilders
             #region Assert
             Assert.Throws<OutputContainsInvalidWord>(act);
             #endregion
+        }
+
+        public void Dispose()
+        {
+            AssertInvariants();
         }
     }
 }

@@ -8,7 +8,7 @@ using ConsoleApplication;
 
 namespace StepByStepLiskovTestByBuilders
 {
-    public class UserTest: EntityTest<User>
+    public class UserTest: EntityTest<User> 
     {
 
         private const string SOME_NAME = "some name";
@@ -16,6 +16,17 @@ namespace StepByStepLiskovTestByBuilders
         public UserTest()
         {
             sut = getInstance();
+        }
+
+        protected override User getInstance()
+        {
+            return new User(SOME_ID, SOME_NAME);
+        }
+
+        protected override void AssertInvariants()
+        {
+            base.AssertInvariants();
+            Assert.Equal(SOME_NAME, sut.Username);
         }
 
         [Fact]
@@ -52,12 +63,8 @@ namespace StepByStepLiskovTestByBuilders
             #endregion
         }
 
-        public override void SayHelloShouldThrowInputParameterIsOutOfRangeWITHStringShorterThan10Characters()
-        {        }
+        public override void SayHelloShouldThrowInputParameterIsOutOfRangeWITHStringShorterThan10Characters() {}
 
-        protected override User getInstance()
-        {
-            return new User(SOME_ID, SOME_NAME);
-        }
+        
     }
 }
