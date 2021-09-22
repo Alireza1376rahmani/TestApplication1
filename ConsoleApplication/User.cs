@@ -18,25 +18,16 @@ namespace ConsoleApplication
         public override string SayHello(string contact)
         { 
             string output;
-            /* 
-             # PreConditions :
-                    * $contact must not be smaller than 5 character
-             */ 
+
             if (contact.Length < 5)
                 throw new InputParameterIsOutOfRange();
           
             output = "Hello " + contact;
 
-            /*
-             # Post-Conditions :
-                * output must not contain the word "bye" or "good"
-             */
             if ((output.Contains("bye") || output.Contains("@")))
             {
                 throw new OutputContainsInvalidWord();
             }
-
-
 
             return output;
         }
