@@ -8,14 +8,12 @@ using ConsoleApplication;
 
 namespace StepByStepLiskovTestByBuilders
 {
-    public class UserTest: EntityTest
+    public class UserTest: EntityTest<User>
     {
-
-        User sut;
 
         public UserTest()
         {
-            sut = new User(1, "name");
+            sut = getInstance();
         }
 
         [Fact]
@@ -52,5 +50,12 @@ namespace StepByStepLiskovTestByBuilders
             #endregion
         }
 
+        public override void SayHelloShouldThrowInputParameterIsOutOfRangeWITHStringShorterThan10Characters()
+        {        }
+
+        protected override User getInstance()
+        {
+            return new User(SOME_ID, "ss");
+        }
     }
 }

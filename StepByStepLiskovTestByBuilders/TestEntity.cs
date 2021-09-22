@@ -7,7 +7,7 @@ using ConsoleApplication;
 
 namespace StepByStepLiskovTestByBuilders
 {
-    class TestEntity : Entity
+    public class TestEntity : Entity
     {
         public TestEntity(int id) : base(id) {}
     }

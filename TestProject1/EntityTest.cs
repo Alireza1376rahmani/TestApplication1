@@ -88,7 +88,7 @@ namespace TestProject1
         }
 
     }
-    public class EntityTestOrg : EntityTest<TestEntity>
+    public class TestEntityTest : EntityTest<TestEntity>
     {
         protected override EntityBuilder<TestEntity> GetBuilderInstance()
         {

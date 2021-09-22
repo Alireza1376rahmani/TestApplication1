@@ -10,12 +10,16 @@ using ConsoleApplication;
 
 namespace StepByStepLiskovTestByBuilders
 {
-    public class EntityTest
+    public abstract class EntityTest<TEntity>
+        where TEntity : Entity
     {
 
-        private const int SOME_ID = 5;
+        protected const int SOME_ID = 5;
 
-        private TestEntity sut;
+        protected TEntity sut;
+
+        protected abstract TEntity getInstance();
+
 
         protected virtual void AssertInvariants()
         {
@@ -24,7 +28,7 @@ namespace StepByStepLiskovTestByBuilders
 
         public EntityTest()
         {
-            sut = new TestEntity(SOME_ID);
+            sut = getInstance();
         }
 
         [Fact]

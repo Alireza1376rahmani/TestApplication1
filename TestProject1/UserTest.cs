@@ -23,7 +23,6 @@ namespace TestProject1
             return new UserBuilder().WithName(SOME_NAME);
         }
 
-
         [Fact]
         public void SayHelloShouldThrowInputParameterIsOutOfRangeWITHStringShorterThan5Characters()
         {
