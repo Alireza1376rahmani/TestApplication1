@@ -12,11 +12,11 @@ namespace StepByStepLiskovTestByBuilders
 {
     public abstract class EntityTest<TEntity, TEntityBuilder> : IDisposable
         where TEntity : Entity
-        where TEntityBuilder:EntityBuilder<TEntity>
+        where TEntityBuilder : EntityBuilder<TEntity, TEntityBuilder>
     {
 
         protected const int SOME_ID = 5;
-        protected TEntityBuilder builder ;
+        protected TEntityBuilder builder;
         protected TEntity sut;
 
         protected abstract TEntity getInstance();

@@ -7,15 +7,16 @@ using ConsoleApplication;
 
 namespace StepByStepLiskovTestByBuilders
 {
-    abstract public class EntityBuilder<TEntity>
+    abstract public class EntityBuilder<TEntity, TSelf>
         where TEntity:Entity
+        where TSelf:EntityBuilder<TEntity,TSelf>
     {
         protected int id;
 
-        public EntityBuilder<TEntity> WithId(int id)
+        public TSelf WithId(int id)
         {
             this.id = id;
-            return this;
+            return (TSelf)this;
         }
 
         public abstract TEntity Build();

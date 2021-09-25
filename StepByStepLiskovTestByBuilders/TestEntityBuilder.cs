@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StepByStepLiskovTestByBuilders
 {
-    public class TestEntityBuilder : EntityBuilder<TestEntity>
+    public class TestEntityBuilder : EntityBuilder<TestEntity, TestEntityBuilder>
     {
         public override TestEntity Build()
         {

@@ -21,8 +21,7 @@ namespace StepByStepLiskovTestByBuilders
         public UserTest()
         {
             builder = getBuilderInstance();
-            sut = builder.WithName(SOME_NAME).WithId(SOME_ID).Build();
-           // sut = builder.WithId(SOME_ID).WithName(SOME_NAME).Build();
+            sut = builder.WithId(SOME_ID).WithName(SOME_NAME).Build();
         }
 
         protected override User getInstance()
