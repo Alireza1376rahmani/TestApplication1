@@ -7,7 +7,7 @@ using ConsoleApplication;
 
 namespace StepByStepLiskovTestByBuilders
 {
-    class UserBuilder : EntityBuilder<User>
+    public class UserBuilder : EntityBuilder<User>
     {
         private string username;
 

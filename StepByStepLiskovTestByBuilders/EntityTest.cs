@@ -10,15 +10,17 @@ using ConsoleApplication;
 
 namespace StepByStepLiskovTestByBuilders
 {
-    public abstract class EntityTest<TEntity> : IDisposable
+    public abstract class EntityTest<TEntity, TEntityBuilder> : IDisposable
         where TEntity : Entity
+        where TEntityBuilder:EntityBuilder<TEntity>
     {
 
         protected const int SOME_ID = 5;
-        protected EntityBuilder<TEntity> builder = null;
+        protected TEntityBuilder builder ;
         protected TEntity sut;
 
-        protected virtual TEntity getInstance() { return null; }
+        protected abstract TEntity getInstance();
+        protected abstract TEntityBuilder getBuilderInstance();
 
 
         protected virtual void AssertInvariants()

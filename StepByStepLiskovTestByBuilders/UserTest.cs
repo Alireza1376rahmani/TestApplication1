@@ -8,15 +8,21 @@ using ConsoleApplication;
 
 namespace StepByStepLiskovTestByBuilders
 {
-    public class UserTest: EntityTest<User> 
+    public class UserTest: EntityTest<User, UserBuilder> 
     {
 
         private const string SOME_NAME = "some name";
 
+        protected override UserBuilder getBuilderInstance()
+        {
+            return new UserBuilder();
+        }
+
         public UserTest()
         {
-            builder = new UserBuilder();
+            builder = getBuilderInstance();
             sut = builder.WithName(SOME_NAME).WithId(SOME_ID).Build();
+           // sut = builder.WithId(SOME_ID).WithName(SOME_NAME).Build();
         }
 
         protected override User getInstance()
