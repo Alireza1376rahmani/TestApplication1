@@ -15,7 +15,7 @@ namespace StepByStepLiskovTestByBuilders
 
         public UserTest()
         {
-            UserBuilder builder = new UserBuilder();
+            builder = new UserBuilder();
             sut = builder.WithName(SOME_NAME).WithId(SOME_ID).Build();
         }
 

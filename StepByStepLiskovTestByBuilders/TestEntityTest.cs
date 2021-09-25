@@ -13,7 +13,7 @@ namespace StepByStepLiskovTestByBuilders
 
         public TestEntityTest()
         {
-            var builder = new TestEntityBuilder();
+            builder = new TestEntityBuilder();
             sut = builder.WithId(SOME_ID).Build();
         } 
 

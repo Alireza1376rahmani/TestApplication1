@@ -15,7 +15,7 @@ namespace StepByStepLiskovTestByBuilders
     {
 
         protected const int SOME_ID = 5;
-
+        protected EntityBuilder<TEntity> builder = null;
         protected TEntity sut;
 
         protected virtual TEntity getInstance() { return null; }

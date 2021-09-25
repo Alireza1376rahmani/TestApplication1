@@ -7,7 +7,7 @@ using ConsoleApplication;
 
 namespace StepByStepLiskovTestByBuilders
 {
-    abstract class EntityBuilder<TEntity>
+    abstract public class EntityBuilder<TEntity>
         where TEntity:Entity
     {
         protected int id;
