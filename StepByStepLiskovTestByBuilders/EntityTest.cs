@@ -15,22 +15,23 @@ namespace StepByStepLiskovTestByBuilders
         where TEntityBuilder : EntityBuilder<TEntity, TEntityBuilder>
     {
 
-        protected const int SOME_ID = 5;
+        private const int SOME_ID = 5;
         protected TEntityBuilder builder;
         protected TEntity sut;
 
-        protected abstract TEntity getInstance();
+        public EntityTest()
+        {
+            builder = getBuilderInstance();
+            builder.WithId(SOME_ID);
+            sut = builder.Build();
+        }
+
         protected abstract TEntityBuilder getBuilderInstance();
 
 
         protected virtual void AssertInvariants()
         {
             Assert.Equal(SOME_ID, sut.Id);
-        }
-
-        public EntityTest()
-        {
-            sut = getInstance();
         }
 
         [Fact]

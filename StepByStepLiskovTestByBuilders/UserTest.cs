@@ -20,13 +20,7 @@ namespace StepByStepLiskovTestByBuilders
 
         public UserTest()
         {
-            builder = getBuilderInstance();
-            sut = builder.WithId(SOME_ID).WithName(SOME_NAME).Build();
-        }
-
-        protected override User getInstance()
-        {
-            return new User(SOME_ID, SOME_NAME);
+            sut = builder.WithName(SOME_NAME).Build();
         }
 
         protected override void AssertInvariants()
