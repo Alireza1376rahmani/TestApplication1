@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 using ConsoleApplication;
 
 namespace StepByStepLiskovTestByBuilders
 {
-    public class UserTest: EntityTest<User, UserBuilder> 
+    public class UserTest : EntityTest<User, UserBuilder>
     {
 
         private const string SOME_NAME = "some name";
@@ -63,8 +59,7 @@ namespace StepByStepLiskovTestByBuilders
             #endregion
         }
 
-        public override void SayHelloShouldThrowInputParameterIsOutOfRangeWITHStringShorterThan10Characters() {}
+        public override void SayHelloShouldThrowInputParameterIsOutOfRangeWITHStringShorterThan10Characters() { }
 
-        
     }
 }

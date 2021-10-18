@@ -1,20 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 using ConsoleApplication;
 
 namespace TestProject1
 {
-    public abstract class EntityTest<TEntity> :IDisposable where TEntity:Entity 
+    public abstract class EntityTest<TEntity> : IDisposable where TEntity : Entity
     {
-
         public TEntity sut;
         protected EntityBuilder<TEntity> Builder = null;
         private const int SOME_ID = 10;
-
 
         public EntityTest()
         {
@@ -47,7 +41,6 @@ namespace TestProject1
         {
             Assert.Equal(SOME_ID, sut.Id);
         }
-
 
         [Fact]
         public virtual void SayHelloShouldThrowInputParameterIsOutOfRangeWITHStringShorterThan10Characters()
@@ -86,8 +79,8 @@ namespace TestProject1
         {
             AssertInvariants();
         }
-
     }
+
     public class TestEntityTest : EntityTest<TestEntity>
     {
         protected override EntityBuilder<TestEntity> GetBuilderInstance()
@@ -95,6 +88,4 @@ namespace TestProject1
             return new TestEntityBuilder();
         }
     }
-
-
 }
